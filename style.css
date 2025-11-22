@@ -1,0 +1,106 @@
+:root{
+	--bg: #0f1724;
+	--card: #0b1220;
+	--muted: #94a3b8;
+	--accent: #7c3aed;
+	--accent-2: #06b6d4;
+	--text: #e6eef8;
+	--radius: 10px;
+	--container-max: 1100px;
+	--space: 1rem;
+	--ff-sans: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+
+/* Simple reset */
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+	margin:0;
+	font-family:var(--ff-sans);
+	background: linear-gradient(180deg,var(--bg) 0%, #051226 100%);
+	color:var(--text);
+	-webkit-font-smoothing:antialiased;
+	-moz-osx-font-smoothing:grayscale;
+	line-height:1.5;
+}
+
+.container{
+	width:calc(100% - 2rem);
+	max-width:var(--container-max);
+	margin:0 auto;
+	padding:0 1rem;
+}
+
+/* Header */
+.site-header{
+	padding:calc(var(--space) * 0.75) 0;
+}
+.site-title{
+	margin:0;
+	font-size:1.25rem;
+	letter-spacing:0.06em;
+	text-transform:uppercase;
+	color:var(--text);
+	display:inline-block;
+}
+.site-nav{
+	float:right;
+}
+.site-nav .nav-link{
+	color:var(--muted);
+	text-decoration:none;
+	margin-left:1rem;
+	font-size:0.95rem;
+}
+.site-nav .nav-link:hover{color:var(--accent)}
+
+/* Hero */
+.hero{
+	display:flex;
+	align-items:center;
+	min-height:60vh;
+	padding:2rem 0;
+	background:linear-gradient(90deg, rgba(124,58,237,0.06), rgba(6,182,212,0.03));
+}
+.hero-content{
+	padding:2rem;
+	background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);
+	border-radius:var(--radius);
+}
+.hero h2{margin:0 0 0.5rem 0;font-size:2rem}
+.hero p{margin:0 0 1rem 0;color:var(--muted)}
+.btn{
+	display:inline-block;
+	padding:0.55rem 0.9rem;
+	background:linear-gradient(90deg,var(--accent),var(--accent-2));
+	color:white;
+	text-decoration:none;
+	border-radius:999px;
+	font-weight:600;
+}
+
+/* Footer */
+.site-footer{
+	padding:1.5rem 0;
+	color:var(--muted);
+	font-size:0.9rem;
+}
+
+/* Responsive layout tweaks */
+@media (max-width:800px){
+	.site-nav{float:none;margin-top:0.5rem}
+	.site-nav .nav-link{display:inline-block;margin-left:0.6rem}
+	.hero{min-height:50vh}
+	.hero-content{padding:1.25rem}
+	.hero h2{font-size:1.5rem}
+}
+
+@media (max-width:420px){
+	.container{width:calc(100% - 1rem)}
+	.site-title{font-size:1rem}
+	.hero h2{font-size:1.25rem}
+	.site-nav .nav-link{font-size:0.9rem}
+}
+
+/* Small utilities */
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);border:0}
